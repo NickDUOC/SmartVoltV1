@@ -61,11 +61,19 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     testImplementation(libs.junit)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.navigation.compose)
+    //google y ubi del usuario
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
+    // Para usar .await() con tasks de Google Play Services en coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.0")
+    // Mapbox Compose (o la versión que estés utilizando en tu proyecto)
+    val mapboxVersion = "11.2.0"
+    implementation("com.mapbox.maps:android:${mapboxVersion}")
+    implementation("com.mapbox.extension:maps-compose:${mapboxVersion}")
 }

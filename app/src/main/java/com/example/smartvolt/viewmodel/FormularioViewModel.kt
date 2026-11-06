@@ -55,8 +55,10 @@ class FormularioViewModel(application: Application) : AndroidViewModel(applicati
         }
     }
 
-    // mockup de verificación GPS de developer
-    fun registrarMarca(tipoMarca: String) {
+    // registro con gps
+    fun registrarMarca(tipoMarca: String,
+                       latitud: Double = -12.34567,
+                       longitud: Double = -76.54321) {
         if (tipoMarca != _uiState.value.proximoTipoMarcaPermitido) return
 
         viewModelScope.launch {
@@ -72,8 +74,8 @@ class FormularioViewModel(application: Application) : AndroidViewModel(applicati
                 faena = _uiState.value.faena,
                 tipoMarca = tipoMarca,
                 fechaHora = fechaHoraActual,
-                latitud = -12.3456,
-                longitud = -65.4321,
+                latitud = latitud,
+                longitud = longitud,
                 sincronizado = false
             )
 
@@ -88,7 +90,7 @@ class FormularioViewModel(application: Application) : AndroidViewModel(applicati
             _uiState.update {
                 it.copy(
                     isSincronizandoServidor = true,
-                    mensajeSincronizacion = "Conectando con servidores de SmartVolt..."
+                    mensajeSincronizacion = "Conectando con servidores..."
                 )
             }
 

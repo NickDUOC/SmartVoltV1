@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SmartVolt</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiZnJlZGNhbXBvczEyMzAiLCJhIjoiY2xueXVjb2VsMHQ2bTJqbWs3Yjludzk5NCJ9.euzb7ETlK6B2ZxtQ4_XtIQ</string>
 </resources>
